@@ -1,6 +1,12 @@
 
 
-<h3>EDIT Part: {{part.partnr}}</h3>
+<h3>{{part.partnr}}</h3>
+
+<ul class="list-inline">
+		<button ng-click="savePart()" type="button" class="btn btn-primary">Save</button>
+</ul>
+
+
 
 <uib-tabset>
 <uib-tab heading="common" ui-sref="edit.common"></uib-tab>

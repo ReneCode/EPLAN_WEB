@@ -1,10 +1,26 @@
+<form role="form" class="form-horizontal">
+	<div class="row">
+		&nbsp;
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="characteristic">Technical Characteristic</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control" id="characteristic" 
+				ng-model="part.data.characteristics">
+		</div>
+	</div>
 
 
 
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="crosssection">Cross-Section</label>
+		<div class="col-sm-9">
+			<input type="text" class="form-control" id="crosssection" 
+				ng-model="part.data.connectioncrosssection.de_DE">
+		</div>
+	</div>
 
 
-<p>TopGroup: {{part.producttopgroup}}</p>
-<p>Group: {{part.productgroup}}</p>
 
-
-
+</form>
