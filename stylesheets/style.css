@@ -10,11 +10,18 @@ body {
 a {
   color: #00B7FF;
 }
-.part-row .controls {
+.epl-btn-dimmer {
 	opacity: 0.2;
 }
 
-.part-row > .controls:hover  {
+.epl-btn-dimmer:hover  {
 	opacity: 1.0;
 }
 
+.part-btn-save {
+	opacity: 0.2;
+}
+
+.dimmed {
+	opacity: 0.2;
+}

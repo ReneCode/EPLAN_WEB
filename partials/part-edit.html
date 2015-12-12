@@ -2,8 +2,18 @@
 
 <h3>{{part.partnr}}</h3>
 
-<ul class="list-inline">
-		<button ng-click="savePart()" type="button" class="btn btn-primary">Save</button>
+<ul class="row">
+	<div class="col-sm-2">
+		<button ng-click="savePart()" type="button" class="btn btn-block btn-primary">Save</button>
+	</div>
+<!--
+	<div class="col-sm-2">
+		<button ng-click="copyPart()" type="button" class="btn btn-block btn-default">Duplicate</button>
+	</div>
+	-->
+	<div class="col-sm-2">
+		<button ng-click="deletePart()" type="button" class="btn btn-block btn-danger epl-btn-dimmer">Delete</button>
+	</div>
 </ul>
 
 

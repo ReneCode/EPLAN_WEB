@@ -7,8 +7,10 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
   var id = $stateParams.id;
 
   getPart(id);
+
   // switch to the common-tab
   $state.go('edit.common');
+
 
   function getPart(id) {
     $http.get(URL_ROOT + '/api/v1/part/' + id)
@@ -29,12 +31,15 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
       ); 
   }
 
+
   $scope.savePart = function() {
     // update the part
     $http.put(URL_ROOT + '/api/v1/part/' + $scope.part._id, $scope.part)
       .then(
         // success
         function(response) {
+          // back to index page
+          $state.go('index');
         }
       );
   }
