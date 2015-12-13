@@ -81,19 +81,3 @@ eplanApp.config(function($stateProvider) {
 
 });
 
-/*
-eplanApp.config(['$routeProvider', function($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'partials/part-list.html',
-      controller: 'PartListController'
-    })
-    .when("/edit", {
-      templateUrl: 'partials/part-edit.html',
-      controller: 'PartEditController'
-    });
-
-  }
-]);
-
-*/
