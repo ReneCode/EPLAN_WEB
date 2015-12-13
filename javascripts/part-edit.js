@@ -74,9 +74,31 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
     }, function() {
       // cancel / dialog.dismiss
     });
-
   }
 
+
+  // ----------
+/*
+  for accordion GUI
+
+  $scope.oneAtATime = false;
+
+  $scope.groups = [{
+        groupTitle: "Common",
+        templateUrl: "partials/part-edit-common.html"
+  }, {
+        groupTitle: "Technical Data",
+        templateUrl: "partials/part-edit-technical.html"
+  } ];
+
+  $scope.status = {
+    isOpen: new Array($scope.groups.length)
+  };
+
+  for (var i = 0; i < $scope.status.isOpen.length; i++) {
+        $scope.status.isOpen[i] = (i === 0);
+  }
+*/
 });
 
 
