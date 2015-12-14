@@ -3,8 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.search {
-	margin: 10px;
+.tb-margin {
+  margin-top: 5px;
+	margin-bottom: 10px;
 }
 
 a {
@@ -24,4 +25,10 @@ a {
 
 .dimmed {
 	opacity: 0.2;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 70vh;
+    overflow-x: hidden;
 }

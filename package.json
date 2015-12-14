@@ -1,0 +1,13 @@
+{
+  "name": "eplan-web",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "python -m SimpleHTTPServer 8000"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+

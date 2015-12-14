@@ -9,12 +9,18 @@ app.controller('PartListController', function($scope, $http, eplanUtility) {
   getParts();
 
   $scope.searchParts = function() {
-  	var searchText = $scope.searchText;
-    getParts(searchText);
+    getParts();
   };
 
-  function getParts(searchText) {
-    $http.get(URL_ROOT + '/api/v1/part', {params:{q:searchText}} )
+  function getParts() {
+    var params = {};
+    if ($scope.searchText) {
+      params.q = $scope.searchText;
+    }
+    if ($scope.currentproductgroup  &&  $scope.currentproductgroup.id > 0) {
+      params.f = 'productgroup:' + $scope.currentproductgroup.id;
+    }
+    $http.get(URL_ROOT + '/api/v1/part', {params:params} )
       .then( 
         // success
         function(response) {
@@ -31,4 +37,16 @@ app.controller('PartListController', function($scope, $http, eplanUtility) {
         }
       ); 
   }
+
+
+  $scope.productgroups = eplanUtility.getProductGroups();
+
+  $scope.currentproductgroup = $scope.productgroups[0];
+
+  $scope.change = function(group){
+    $scope.currentproductgroup = group;
+    $scope.searchText = "";
+    getParts();
+  }
+
 });

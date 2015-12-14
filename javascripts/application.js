@@ -1,29 +1,5 @@
 var eplanApp = angular.module('eplanApp', ['ui.router', 'ui.bootstrap']);
 
-//
-// Service
-//
-eplanApp.service("eplanUtility", function($location) {
-
-  return {
-    getApiHost: function() {
-      var apiHost = "http://localhost:64010";
-      var host = $location.host();
-      if (host != 'localhost') {
-        // change route to subdomain "<protocol>://api.<host>"
-        // =>   different service / look at .htaccess !
-        // remove the subdomain
-        host = host.match(/[^\.]*\.[^.]*$/)[0];
-        apiHost = $location.protocol() + "://api." + host;
-        var port = $location.port();
-        if (port) {
-          apiHost += ":" + port;
-        }
-      }
-      return apiHost;
-    }
-  }
-});
 
 
 eplanApp.directive('partRow', function() {
