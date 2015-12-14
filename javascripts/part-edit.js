@@ -77,9 +77,7 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
   }
 
 
-  // ----------
-/*
-  for accordion GUI
+  // ----------  for accordion GUI -------------
 
   $scope.oneAtATime = false;
 
@@ -98,7 +96,7 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
   for (var i = 0; i < $scope.status.isOpen.length; i++) {
         $scope.status.isOpen[i] = (i === 0);
   }
-*/
+
 });
 
 
