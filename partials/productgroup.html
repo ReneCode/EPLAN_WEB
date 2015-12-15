@@ -1,0 +1,8 @@
+<div class="btn-group" uib-dropdown is-open="status.isopen">
+  <button class="btn btn-default" id="productgroup" uib-dropdown-toggle ng-disabled="disabled">{{currentproductgroup.name}} <span class="caret"></span></button>
+  <ul class="scrollable-menu uib-dropdown-menu" role="menu" aria-labelledby="productgroup">
+    <li role="menuitem">
+      <a href="#" ng-click="change(group)" ng-repeat="group in productgroups">{{group.name}}</a>
+    </li>
+  </ul>
+</div>

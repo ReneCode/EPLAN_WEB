@@ -1,14 +1,6 @@
 var eplanApp = angular.module('eplanApp', ['ui.router', 'ui.bootstrap']);
 
 
-
-eplanApp.directive('partRow', function() {
-  return {
-    templateUrl: 'templates/part-row-template.html'
-  }
-})
-
-
 eplanApp.run([ '$state', function($state) {
   // start with state: index
   $state.transitionTo('index');

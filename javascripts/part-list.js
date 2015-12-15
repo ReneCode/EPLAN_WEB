@@ -5,6 +5,8 @@ app.controller('PartListController', function($scope, $http, eplanUtility) {
   var URL_ROOT = eplanUtility.getApiHost();
   // default pastList is empty
 	$scope.partList = {};
+
+
   // get Parts without any filter
   getParts();
 
@@ -12,13 +14,13 @@ app.controller('PartListController', function($scope, $http, eplanUtility) {
     getParts();
   };
 
-  function getParts() {
+  function getParts(group) {
     var params = {};
     if ($scope.searchText) {
       params.q = $scope.searchText;
     }
-    if ($scope.currentproductgroup  &&  $scope.currentproductgroup.id > 0) {
-      params.f = 'productgroup:' + $scope.currentproductgroup.id;
+    if (group  &&  group.id > 0) {
+      params.f = 'productgroup:' + group.id;
     }
     $http.get(URL_ROOT + '/api/v1/part', {params:params} )
       .then( 
@@ -39,14 +41,15 @@ app.controller('PartListController', function($scope, $http, eplanUtility) {
   }
 
 
-  $scope.productgroups = eplanUtility.getProductGroups();
+  $scope.changePG = function(group){
+    $scope.searchText = "";
+    getParts(group);
+  }
 
-  $scope.currentproductgroup = $scope.productgroups[0];
-
+/*
   $scope.change = function(group){
-    $scope.currentproductgroup = group;
     $scope.searchText = "";
     getParts();
   }
-
+*/
 });
