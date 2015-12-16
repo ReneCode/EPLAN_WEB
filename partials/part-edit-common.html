@@ -2,7 +2,8 @@
 <div class="form-group">
 	<label class="control-label col-sm-3" for="partnr">Part Number</label>
 	<div class="col-sm-9">
-		<input type="text" class="form-control" id="partnr" ng-model="part.partnr">
+		<input type="text" class="form-control" id="partnr" required ng-model="part.partnr">
+		<span class="label label-danger" ng-if="errors.Name">{{errors.Name}}</span>
 	</div>
 </div>
 

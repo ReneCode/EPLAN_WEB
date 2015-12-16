@@ -32,3 +32,12 @@ a {
     max-height: 70vh;
     overflow-x: hidden;
 }
+
+/*Show red border if kept the input empty after touching*/
+.ng-touched.ng-invalid-required {
+    border-color: red;
+}
+/* Show red border when stuff has been typed in, but its invalid */
+.ng-dirty.ng-invalid {
+  border-color: red;
+}
