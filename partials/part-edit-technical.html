@@ -1,6 +1,38 @@
 
 
 
+<div class="form-group">
+	<label class="control-label col-sm-3" for="height">Height</label>
+	<div class="col-sm-9">
+		<div class="input-group">
+			<input type="text" class="form-control" aria-describedby="mm-height" id="height" ng-model="part.data.height">
+			<span class="input-group-addon" id="mm-height">mm</span>
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="control-label col-sm-3" for="width">Width</label>
+	<div class="col-sm-9">
+		<div class="input-group">
+			<input type="text" class="form-control" aria-describedby="mm-width" id="width" ng-model="part.data.width">
+			<span class="input-group-addon" id="mm-width">mm</span>
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="control-label col-sm-3" for="depth">Depth</label>
+	<div class="col-sm-9">
+		<div class="input-group">
+			<input type="text" class="form-control" aria-describedby="mm-depth" id="depth" ng-model="part.data.depth">
+			<span class="input-group-addon" id="mm-depth">mm</span>
+		</div>
+	</div>
+</div>
+
+
+
 
 <div class="form-group">
 	<label class="control-label col-sm-3" for="characteristic">Technical Characteristic</label>
@@ -9,8 +41,6 @@
 			ng-model="part.data.characteristics">
 	</div>
 </div>
-
-
 
 <div class="form-group">
 	<label class="control-label col-sm-3" for="crosssection">Cross-Section</label>

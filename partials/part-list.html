@@ -1,10 +1,12 @@
 <div class="row tb-margin">
     <form ng-submit="searchParts()">
-        <div class="col-xs-8">
-            <input autofocus type="text" ng-model="searchText" class="form-control ">
-        </div>
-        <div class="col-xs-4">
-            <button ng-click="searchParts()" class="btn btn-primary">Search</button>
+        <div class="col-sm-12 col-sm-offset-0">
+            <div class="input-group">
+                <input autofocus type="text" ng-model="searchText" class="form-control ">
+                <span class="input-group-btn">
+                    <button ng-click="searchParts()" class="btn btn-primary">Search</button>
+                </span>
+            </div>
         </div>
     </form>
 </div>
