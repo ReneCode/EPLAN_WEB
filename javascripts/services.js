@@ -6,7 +6,7 @@ app = angular.module('eplanApp');
 // Service
 //
 eplanApp.service("eplanUtility", function($location) {
-
+	var self = this;
   return {
     getApiHost: function() {
       var apiHost = "http://localhost:64010";
@@ -23,6 +23,12 @@ eplanApp.service("eplanUtility", function($location) {
         }
       }
       return apiHost;
+    },
+
+    getProductGroup: function(id) {
+    	return this.getProductGroups().find( function(pg) {
+    		return pg.id == id;
+    	});
     },
 
     getProductGroups: function() {

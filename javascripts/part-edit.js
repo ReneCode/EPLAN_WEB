@@ -7,6 +7,7 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
   var id = $stateParams.id;
 
   $scope.showModal = false;
+  $scope.groupname = "";    // initial value for the productGroup-combobox
 
   getPart(id);
 
@@ -20,6 +21,11 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
         // success
         function(response) {
           $scope.part = response.data.data;
+          // set the productGroup-combobox to the right text
+          var pg = eplanUtility.getProductGroup($scope.part.productgroup);
+          if (pg) {
+            $scope.groupname = pg.name;
+          }
         },
         // error
         function(response) {
@@ -47,6 +53,7 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
   }
 
   $scope.deletePart = function() {
+    console.log("groupId:", $scope.part.productgroup);
     // see: http://angular-ui.github.io/bootstrap/   Modal
     var modalDialog = $uibModal.open({
       templateUrl: "partials/modal-ok-cancel.html",
@@ -75,6 +82,12 @@ app.controller('PartEditController', function($scope, $http, $state, $stateParam
       // cancel / dialog.dismiss
     });
   }
+
+  $scope.changePG = function(group) {
+    // form is modified
+    $scope.form.$dirty = true;
+  }
+
 
 
   // ----------  for accordion GUI -------------

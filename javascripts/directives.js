@@ -18,22 +18,14 @@ eplanApp.directive('productGroup', function() {
 			// directive can have attribute 'onchange'
 //			pgId: '@',				// used:  <div ... pg-id="{{part.productgroup}}" ...>
 			onChange: '=',		// used:  <div ... on-change="changePG" ...>	
-			currentgroup: '='
+			groupname: '=',
+			groupid: '='
 		},
-
-
-/*
 		
-		link: {
-			post: function(scope, elem, attr) {
-				console.log("preLink", scope.currentgroup);
-
-			}
-		},	
-		*/
 		controller: function($scope, eplanUtility) {
 			$scope.change = function(group){
-				$scope.currentgroup = group;
+				$scope.groupid = group.id;
+				$scope.groupname = group.name;
 				// call that onchange function
 				if ($scope.onChange) {
 					$scope.onChange(group);
