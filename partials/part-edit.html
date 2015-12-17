@@ -1,23 +1,22 @@
 
 
-
-
 <h3>{{part.partnr}}</h3>
 
+<div class="row">
+	<div class="col-sm-2">
+		<button ng-click="savePart()" ng-disabled="!form.$dirty" type="button" class="btn btn-primary btn-block">Save</button>
+	</div>
+	<div class="col-sm-2">
+		<button ng-click="deletePart()" type="button" class="btn btn-danger btn-block epl-btn-dimmer">Delete</button>
+	</div>
+</div>
 
+<div>
+&nbsp;
+</div>
 
 <form name="form" class="form-horizontal">
 
-
-<div class="btn-group">
-	<button ng-click="savePart()" ng-disabled="!form.$dirty" type="button" class="btn btn-block btn-primary">Save</button>
-<!--
-	<div class="col-sm-2">
-		<button ng-click="copyPart()" type="button" class="btn btn-block btn-default">Duplicate</button>
-	</div>
-	-->
-	<button ng-click="deletePart()" type="button" class="btn btn-block btn-danger epl-btn-dimmer">Delete</button>
-</div>
 
 <accordion class="accordion" close-others="oneAtATime">
     <accordion-group ng-repeat="group in groups" is-open="status.isOpen[$index]" >
@@ -27,6 +26,8 @@
         <div ng-include="group.templateUrl"></div>
     </accordion-group>
 </accordion>
+
+</form>
 <!--
 
 <uib-tabset>
