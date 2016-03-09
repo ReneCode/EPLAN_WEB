@@ -1,0 +1,25 @@
+<h2>Process Trace</h2>
+<div>
+  User: <input ng-model="user_name"></input>
+  Process: <input ng-model="process_name"></input>
+  Date: <input ng-model="date"></input>
+  <button class="btn btn-primary" ng-click="showProcesses()">Show</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Process</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="process in processes">
+  	<td>{{process.process_name}} / {{process.title}}</td>
+  	<td>{{(process.start_at)}} / {{(process.duration / 60.0).toFixed(2)}}</td>
+  	<td>{{process.user_name}} </td>
+  </tr>
+  </tbody>
+</table>
+
