@@ -29,6 +29,12 @@ app.controller('ProcessTraceController', function ($scope, $http) {
     }
     $http.get(url, config)
       .then(function(response) {
+        response.data.forEach(function(p) {
+          if (p.start_at) {
+            var dt = new Date(p.start_at);
+            p.till  = new Date(dt.getTime() + p.duration*60000);
+          }
+        });
         $scope.processes = response.data;
       });
     }
