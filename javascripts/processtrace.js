@@ -7,26 +7,28 @@ app.controller('ProcessTraceController', function ($scope, $http) {
     var filter = "";
     var qUser = "";
 
-    if ($scope.user_name) {
-      if (filter) {
-        filter = filter + " ";
+    var params = {
+      process_name: $scope.process_name,
+      user_name: $scope.user_name,
+    };
+
+    if ($scope.start_at) {
+      var aTok = $scope.start_at.split('.');
+      var date = new Date();
+      if (aTok.length > 0) {
+        date.setDate( aTok[0] );
       }
-      filter = filter + "user_name:" + $scope.user_name;
-    }
-    if ($scope.process_name) {
-      if (filter) {
-        filter = filter + " ";
+      if (aTok.length > 1) {
+        date.setMonth( aTok[1] -1 );
       }
-      filter = filter + "process_name:" + $scope.process_name;
+      params.start_at = date;
     }
 
     var url = "http://api.riffer.eu/process";
     var config = {
-      params: {}
+      params: params
     };
-    if (filter) {
-      config.params.f = filter;
-    }
+
     $http.get(url, config)
       .then(function(response) {
         response.data.forEach(function(p) {

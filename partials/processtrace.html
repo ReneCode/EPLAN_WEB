@@ -2,7 +2,7 @@
 <div>
   User: <input ng-model="user_name"></input>
   Process: <input ng-model="process_name"></input>
-  Date: <input ng-model="date"></input>
+  Date: <input ng-model="start_at"></input>
   <button class="btn btn-primary" ng-click="showProcesses()">Show</button>
 </div>
 
@@ -17,7 +17,7 @@
   <tbody>
   <tr ng-repeat="process in processes">
   	<td>{{process.process_name}} / {{process.title}}</td>
-    <td>{{process.start_at | date:'dd.MMM HH:mm'}} - {{process.till | date:'HH:mm'}} / {{(process.duration / 60.0).toFixed(2)}}</td>
+    <td>{{process.start_at | date:'dd.MM.yyyy HH:mm'}} - {{process.till | date:'HH:mm'}} / {{(process.duration / 60.0).toFixed(2)}}</td>
   	<td>{{process.user_name}} </td>
   </tr>
   </tbody>
