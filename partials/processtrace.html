@@ -10,14 +10,16 @@
   <thead>
     <tr>
       <th>Process</th>
-      <th>Start - End / Duration </th>
+      <th>Start - End</th>
+      <th>Duration</th>
       <th>User</th>
     </tr>
   </thead>
   <tbody>
   <tr ng-repeat="process in processes">
   	<td>{{process.process_name}} / {{process.title}}</td>
-    <td>{{process.start_at | date:'dd.MM.yyyy HH:mm'}} - {{process.till | date:'HH:mm'}} / {{(process.duration / 60.0).toFixed(2)}}</td>
+    <td>{{process.start_at | date:'dd.MM.yyyy HH:mm'}} - {{process.till | date:'HH:mm'}}</td>
+    <td>{{(process.duration / 60.0).toFixed(2)}}</td>
   	<td>{{process.user_name}} </td>
   </tr>
   </tbody>

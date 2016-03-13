@@ -1,9 +1,14 @@
 app = angular.module('eplanApp');
-app.controller('ProcessTraceController', function ($scope, $http) {
+app.controller('ProcessTraceController', function ($scope, $http, $filter) {
+
+  setDateToToday();
   showProcesses();
 
-  function showProcesses()
-  {
+  function setDateToToday() {
+    $scope.start_at = $filter('date')(new Date(), 'dd.MM.yyyy'); 
+  }
+
+  function showProcesses() {
     var filter = "";
     var qUser = "";
 
@@ -20,6 +25,9 @@ app.controller('ProcessTraceController', function ($scope, $http) {
       }
       if (aTok.length > 1) {
         date.setMonth( aTok[1] -1 );
+      }
+      if (aTok.length > 2) {
+        date.setYear( aTok[2] );
       }
       params.start_at = date;
     }
