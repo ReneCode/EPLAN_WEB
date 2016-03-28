@@ -11,6 +11,15 @@ eplanApp.run([ '$state', function($state) {
 
 eplanApp.config(function($stateProvider) {
   $stateProvider
+    .state('processaction', {
+      url: "processaction",
+      views: {
+        "index": {
+          templateUrl: 'partials/processaction.html',
+          controller: 'ProcessActionController'
+        }
+      }
+    })
     .state('processtrace', {
       url: "processtrace",
       views: {

@@ -1,0 +1,33 @@
+<h2>Process Action</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Action</th>
+      <th>Parameter</th>
+      <th>Time</th>
+      <th>Result</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input ng-model="user_name"></td>
+    <td><input ng-model="action"></td>
+    <td><input ng-model="parameter"></td>
+    <td><input ng-model="start_at"></td>
+    <td></td>
+    <td><button class="btn btn-primary" ng-click="addAction()">Add</button></td>
+  </tr>
+
+  <tr ng-repeat="action in actions">
+    <td>{{action.user_name}}</td>
+    <td>{{action.action}}</td>
+    <td>{{action.parameter}}</td>
+    <td>{{action.start_at | date:'dd.MM.yyyy HH:mm'}}</td>
+    <td>{{action.result}}</td>
+  </tr>
+  </tbody>
+</table>
+

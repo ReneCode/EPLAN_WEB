@@ -1,5 +1,6 @@
 app = angular.module('eplanApp');
-app.controller('ProcessTraceController', function ($scope, $http, $filter) {
+app.controller('ProcessTraceController', function ($scope, $http, $filter, eplanUtility) {
+  var URL_ROOT = eplanUtility.getApiHost();
 
   setDateToToday();
   showProcesses();
@@ -32,7 +33,7 @@ app.controller('ProcessTraceController', function ($scope, $http, $filter) {
       params.start_at = date;
     }
 
-    var url = "http://api.riffer.eu/process";
+    var url = URL_ROOT + "/process";
     var config = {
       params: params
     };

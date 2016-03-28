@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
--->
+    -->
     <title>Parts Management</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -24,12 +24,14 @@
     <script src="/javascripts/angular-ui-router.min.js"></script>
     <script src="/javascripts/application.js"></script>
     <script src="/javascripts/services.js"></script>
+    <script src="/javascripts/ProcessService.js"></script>
     <script src="/javascripts/directives.js"></script>
     <script src="/javascripts/controller.js"></script>
     <script src="/javascripts/part-list.js"></script>
     <script src="/javascripts/part-edit.js"></script>
     <script src="/javascripts/modal-ok-cancel.js"></script>
     <script src="/javascripts/processtrace.js"></script>
+    <script src="/javascripts/processaction.js"></script>
     <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header"><a ui-sref="index" class="navbar-brand">Parts Management</a>
@@ -37,7 +39,8 @@
 
                     <li class="active"><a href ui-sref="index">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-                    <li><a href ui-sref="processtrace">Process Trace</a></li>
+                    <li><a href ui-sref="processtrace">Process List</a></li>
+                    <li><a href ui-sref="processaction">Process Action</a></li>
                 </div>  
             </div>
         </div>
