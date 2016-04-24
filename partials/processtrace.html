@@ -23,6 +23,8 @@
     <td>{{process.id}}</td>
     <td>{{(process.duration / 60.0).toFixed(2)}}</td>
   	<td>{{process.user_name}} </td>
+    <td><button class="btn btn-warning btn-sm" 
+          ng-click="killProcess(process.id, process.user_name)" >kill</button></td>
   </tr>
   </tbody>
 </table>

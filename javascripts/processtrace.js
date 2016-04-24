@@ -9,6 +9,7 @@ app.controller('ProcessTraceController', function ($scope, $http, $filter, eplan
     $scope.start_at = $filter('date')(new Date(), 'dd.MM.yyyy'); 
   }
 
+
   function showProcesses() {
     var filter = "";
     var qUser = "";
@@ -52,6 +53,25 @@ app.controller('ProcessTraceController', function ($scope, $http, $filter, eplan
 
     $scope.showProcesses = function() {
       showProcesses();
+    };
+
+    $scope.killProcess = function(id, user_name) {
+      if (user_name  &&  id) {
+        var sendData = {
+          user_name: user_name,
+          action: 'kill',
+          parameter: id
+        };
+        sendData.start_at = new Date();
+
+        var url = URL_ROOT + '/process/action';
+
+        $http.post(url, sendData)
+          .then(function(response) {
+            console.log("kill:" + id + "/" + user_name);
+
+          });
+      }
     };
 });
 
