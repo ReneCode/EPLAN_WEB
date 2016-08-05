@@ -9,30 +9,6 @@ app.controller('IoTController', function ($scope, $http, $filter, eplanUtility) 
     $scope.date = ""; // $filter('date')(new Date(), 'dd.MM.yyyy'); 
   }
 
-
-
-  function showChart(dataPoints) {
-      var chart = new CanvasJS.Chart("chartContainer", {
-	    	title:{
-		    	text: "Light Graph"              
-		    },
-            axisX:{      
-                valueFormatString: "HH:mm",
-                labelAngle: -50
-            },
-            data: [              
-                {
-                    // Change type to "doughnut", "line", "splineArea", etc.
-                    type: "line",
-                    dataPoints: dataPoints 
-
-                }
-    		]
-	    });
-	    chart.render();
-    }
-
-
   function showAll() {
     var filter = "";
     var qUser = "";
@@ -71,12 +47,16 @@ app.controller('IoTController', function ($scope, $http, $filter, eplanUtility) 
             });
             var chart = new CanvasJS.Chart("chartContainer", {
                 title:{
-                    text: "My First Chart in CanvasJS"              
+                    text: "Light-Chart"              
                 },
+                axisX:{      
+                    valueFormatString: "D.M. HH:mm",
+                    labelAngle: -50
+                },                
                 data: [              
                     {
                         // Change type to "doughnut", "line", "splineArea", etc.
-                        type: "column",
+                        type: "line",
                         dataPoints: dataPoints 
                     }
                 ]
