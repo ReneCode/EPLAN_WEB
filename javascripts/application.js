@@ -11,6 +11,15 @@ eplanApp.run([ '$state', function($state) {
 
 eplanApp.config(function($stateProvider) {
   $stateProvider
+      .state('iot', {
+      url: "iot",
+      views: {
+        "index": {
+          templateUrl: 'partials/iot.html',
+          controller: 'IoTController'
+        }
+      }
+    })
     .state('processaction', {
       url: "processaction",
       views: {
