@@ -15,7 +15,7 @@ app.controller('IoTController', function ($scope, $http, $filter, eplanUtility) 
 
     var params = {
       source: "esp8266",
-      limit: 5000
+      limit: 10000
     };
 
     if ($scope.date) {
