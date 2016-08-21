@@ -1,5 +1,5 @@
 app = angular.module('eplanApp');
-app.controller('ProcessActionController', function ($scope, ProcessService, eplanUtility, $http, $filter) {
+app.controller('ProcessActionController', function ($scope, DateTimeService, eplanUtility, $http, $filter) {
   var URL_ROOT = eplanUtility.getApiHost();
 
   clearInput();
@@ -33,7 +33,7 @@ app.controller('ProcessActionController', function ($scope, ProcessService, epla
         parameter: $scope.parameter
       };
       if ($scope.start_at) {
-        sendData.start_at = ProcessService.parseGermanDateTime($scope.start_at);
+        sendData.start_at = DateTimeService.parseGermanDateTime($scope.start_at);
       }
       else {
         sendData.start_at = new Date();

@@ -2,9 +2,9 @@
 app = angular.module('eplanApp');
 
 //
-// ProcessService
+// DateTimeService
 //
-eplanApp.service("ProcessService", function() {
+eplanApp.service("DateTimeService", function() {
 	var self = this;
   return {
   	parseGermanDateTime: function(dateString) {

@@ -1,12 +1,12 @@
 app = angular.module('eplanApp');
-app.controller('IoTController', function ($scope, $http, $filter, eplanUtility) {
+app.controller('IoTController', function ($scope, $http, $filter, DateTimeService, eplanUtility) {
   var URL_ROOT = eplanUtility.getApiHost();
 
   setDateToToday();
   showAll();
 
   function setDateToToday() {
-    $scope.date = ""; // $filter('date')(new Date(), 'dd.MM.yyyy'); 
+    $scope.date = $filter('date')(new Date(), 'dd.MM.yyyy'); 
   }
 
   function showAll() {
@@ -19,18 +19,7 @@ app.controller('IoTController', function ($scope, $http, $filter, eplanUtility) 
     };
 
     if ($scope.date) {
-      var aTok = $scope.date.split('.');
-      var date = new Date();
-      if (aTok.length > 0) {
-        date.setDate( aTok[0] );
-      }
-      if (aTok.length > 1) {
-        date.setMonth( aTok[1] -1 );
-      }
-      if (aTok.length > 2) {
-        date.setYear( aTok[2] );
-      }
-      params.date = date;
+      params.date = DateTimeService.parseGermanDateTime($scope.date);
     }
 
     var url = URL_ROOT + "/logging";
